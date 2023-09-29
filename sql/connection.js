@@ -1,11 +1,11 @@
 require('dotenv').config()
-const mysql = require('mysql')
+const mysql2 = require('mysql2')
 
 class Connection {
   constructor() {
     if (!this.pool) {
-      console.log('creating mysql connection...')
-      this.pool = mysql.createPool({
+      console.log('creating mysql2 connection...')
+      this.pool = mysql2.createPool({
         connectionLimit: 100,
         host: process.env.DB_HOST,
         user: process.env.DB_USER,
