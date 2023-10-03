@@ -14,7 +14,7 @@ const saltRounds = 10
 
 //   bcrypt.hash(password, saltRounds, function(err, hash) {
 //     sql = mysql2.format(sql, [ username, hash ])
-  
+
 //     pool.query(sql, (err, result) => {
 //       if (err) {
 //         if (err.code === 'ER_DUP_ENTRY') return res.status(409).send('Username is taken')
@@ -27,7 +27,7 @@ const saltRounds = 10
 
 const login = (req, res) => {
   const { username, password } = req.body
-
+  console.log('trying something here')
   axios(`https://${process.env.AUTH0_DOMAIN}/oauth/token`, {
     method: 'POST',
     headers: {
@@ -43,15 +43,16 @@ const login = (req, res) => {
       client_secret: process.env.AUTH0_CLIENT_SECRET
     }
   })
-  .then(response => {
-    const { access_token } = response.data
-    res.json({
-      access_token
+    .then(response => {
+      console.log('also here')
+      const { access_token } = response.data
+      res.json({
+        access_token
+      })
     })
-  })
-  .catch(e => {
-    res.send(e)
-  })
+    .catch(e => {
+      res.send(e)
+    })
 
   // let sql = "SELECT * FROM usersCredentials WHERE username = ?"
   // sql = mysql2.format(sql, [ username ])

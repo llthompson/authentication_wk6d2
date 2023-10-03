@@ -1,0 +1,9 @@
+{
+    "grant_type": "password",
+    "username": "test1@example.com",
+    "password": "Password!",
+    "audience": "x",
+    "connection": "Username-Password-Authentication",
+    "client_id": "ADoCORksZSYcPw2OQ0C7OETTdMNREj5m",
+    "client_secret": "yhDwJysUaxvxa8g9umsGOhp7Qg8g4BO3bLueimHiYsbGrE0uMoX0kSgrrQQQ"
+}
